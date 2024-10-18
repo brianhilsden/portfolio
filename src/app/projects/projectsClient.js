@@ -52,7 +52,7 @@ const projects = [
 export default function Projects() {
   return (
     <section className="min-h-screen py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-4 md:px-8">
         <motion.h1
           className="text-4xl md:text-6xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -67,7 +67,7 @@ export default function Projects() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.2,type:"spring", stiffness:"200" }}
             >
               <ProjectCard {...project} />
             </motion.div>

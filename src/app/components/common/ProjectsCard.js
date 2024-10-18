@@ -10,6 +10,7 @@ const ProjectCard = ({ title, description, imageUrl, link }) => {
       <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        transition={{type:"spring",stiffness:"100"}}
         className="bg-gray-800 rounded-lg shadow-lg overflow-hidden"
       >
         <Image

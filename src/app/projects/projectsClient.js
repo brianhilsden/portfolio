@@ -4,29 +4,48 @@ import ProjectCard from "../components/common/ProjectsCard";
 
 const projects = [
   {
+    title: "TechVoyage: Company Website Project",
+    description:
+      "TechVoyage specializes in delivering innovative web solutions. The company focuses on ensuring seamless user experiences. We utilize the latest technologies to meet your unique needs and take pride in crafting solutions that align with your vision and drive measurable results.",
+    imageUrl: "/images/TechVoyageCompany.png",
+    link: "https://techvoyage-kenya.github.io/TechVoyage-website/#/",
+  },
+  {
+    title: "TechVoyage: Food Retail Management Dashboard Project",
+    description:
+      "Introducing the Retail Management Dashboard from TechVoyage, a comprehensive web application designed for Admins, Salespeople, Riders, and Business Owners. Featuring both admin and client sides, this powerful tool allows users to manage orders, oversee transactions, and optimize inventory and deliveries, enhancing productivity and ensuring smooth operations.",
+    imageUrl: "/images/RetailApp.png",
+    link: "https://retail-app-kappa.vercel.app/",
+  },
+  {
     title: "MyDuka",
     description:
-      "MyDuka is a robust retail store management app that allows business owners to manage multiple stores effortlessly. Each store can be administered by dedicated admins, while clerks handle daily operations. Users can manage products, record sales, request inventory, and oversee employee performance, ensuring streamlined operations and enhanced productivity.",
+      "MyDuka is a robust retail management app that empowers business owners to oversee multiple stores effortlessly. With dedicated admins for each store, clerks handle daily tasks, managing products, recording sales, and requesting inventory. The in-app chat feature enables team communication, ensuring operational efficiency and streamlined performance monitoring.",
     imageUrl: "/images/MyDuka.png",
     link: "https://brianhilsden.github.io/MyDuka-FrontEnd/#/",
   },
-
+  {
+    title: "Getway Travels",
+    description:
+      "Getway Travels is an online platform for booking travel packages, designed to enhance the user experience for travelers. The application offers features like searching for destinations, customizing travel plans, and managing bookings. With a user-friendly interface and secure payment options, Getway Travels simplifies planning your next adventure, ensuring a seamless travel experience.",
+    imageUrl: "/images/GetwayTravels.png", 
+    link: "https://brianhilsden.github.io/getway-travels", 
+  },
   {
     title: "Royalty Trading",
     description:
-      "Royalty Trading is a dynamic e-commerce platform built with vanilla JavaScript, designed to provide seamless buying and selling experiences. Users can easily browse a diverse range of products, manage their accounts, and complete secure transactions. With an emphasis on user-friendly design and robust functionality, Royalty Trading makes online shopping accessible and efficient for everyone.",
+      "Royalty Trading is a dynamic e-commerce platform built with vanilla JavaScript, designed to offer seamless buying and selling experiences. Users can browse diverse products, manage accounts, and complete secure transactions. With a focus on user-friendly design, Royalty Trading makes online shopping accessible and efficient for all.",
     imageUrl: "/images/RoyaltyTrading.png",
     link: "https://brianhilsden.github.io/Royalty-trading/",
   },
   {
     title: "MunchInKenya",
-    description: "Welcome to MunchInKenya, your go-to solution for ordering delicious meals from local restaurants. Our elegant single-page application provides a seamless food ordering experience, allowing users to browse menus, customize orders, and track deliveries in real time. With secure online payments and a user-friendly interface, MunchInKenya simplifies the way you enjoy your favorite meals.",
+    description:
+      "Welcome to MunchInKenya, your solution for ordering delicious meals from local restaurants. Our elegant single-page application offers a seamless food ordering experience, enabling users to browse menus, customize orders, and track deliveries in real time. With secure online payments, MunchInKenya simplifies enjoying your favorite meals.",
     imageUrl: "/images/MunchInKenya.png",
     link: "https://brianhilsden.github.io/MunchInKenya-fe/",
-  }
-  
+  },
 ];
-
 
 export default function Projects() {
   return (

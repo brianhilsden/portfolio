@@ -1,5 +1,5 @@
 // pages/index.js
-"use client"
+"use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import EncButton from "./components/common/EncryptButton";
@@ -25,8 +25,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A passionate web developer who creates beautiful and functional web
-            experiences. Let us build something amazing together.
+            I am a dedicated full-stack web developer, passionate about crafting
+            elegant and functional web applications. Let’s collaborate to create
+            something extraordinary together.
           </motion.p>
 
           {/* Call to Action Buttons */}
@@ -37,14 +38,13 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link href="/projects">
-              <EncButton text={"View Projects"}/>
-              
-            
+              <EncButton text={"View All Projects"} />
             </Link>
-            <Link href="/about" className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold transition">
-         
-                About Me
-           
+            <Link
+              href="/about"
+              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold transition"
+            >
+              About Me
             </Link>
           </motion.div>
         </div>
@@ -82,23 +82,30 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Featured Projects
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Project Card Example */}
             <motion.div
               className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-xl font-semibold mb-4">TechVoyage: Company Website Project</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                TechVoyage: Company Website Project
+              </h3>
               <p className="text-gray-300">
-              TechVoyage specializes in delivering innovative web solutions.
+                TechVoyage specializes in delivering innovative web solutions
+                and ensuring seamless user experiences.
               </p>
-              <Link href="https://techvoyage-kenya.github.io/TechVoyage-website/#/" target="_blank" className="text-indigo-500 mt-4 inline-block">
-                View project →
+              <Link
+                href="https://techvoyage-kenya.github.io/TechVoyage-website/#/"
+                target="_blank"
+                className="text-indigo-500 mt-4 inline-block"
+              >
+                Visit site →
               </Link>
             </motion.div>
-
-         
 
             <motion.div
               className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
@@ -106,10 +113,15 @@ export default function Home() {
             >
               <h3 className="text-xl font-semibold mb-4">MyDuka</h3>
               <p className="text-gray-300">
-              MyDuka is a robust retail store management app that allows business owners to manage multiple stores effortlessly.
+                MyDuka is a robust retail store management app that allows
+                business owners to manage multiple stores effortlessly.
               </p>
-              <Link href="https://brianhilsden.github.io/MyDuka-FrontEnd/#/" target="_blank" className="text-indigo-500 mt-4 inline-block">
-                 View project →
+              <Link
+                href="https://brianhilsden.github.io/MyDuka-FrontEnd/#/"
+                target="_blank"
+                className="text-indigo-500 mt-4 inline-block"
+              >
+                Visit site →
               </Link>
             </motion.div>
 
@@ -119,10 +131,16 @@ export default function Home() {
             >
               <h3 className="text-xl font-semibold mb-4">Royalty Trading</h3>
               <p className="text-gray-300">
-              Royalty Trading is a dynamic e-commerce platform built with vanilla JavaScript, designed to provide seamless buying and selling experiences.
+                Royalty Trading is a dynamic e-commerce platform built with
+                vanilla JavaScript, designed to provide seamless buying and
+                selling experiences.
               </p>
-              <Link href="https://brianhilsden.github.io/Royalty-trading/" target="_blank" className="text-indigo-500 mt-4 inline-block">
-                View Project →
+              <Link
+                href="https://brianhilsden.github.io/Royalty-trading/"
+                target="_blank"
+                className="text-indigo-500 mt-4 inline-block"
+              >
+                Visit site →
               </Link>
             </motion.div>
           </div>

@@ -3,6 +3,7 @@ import StoreProvider from "./StoreProvider";
 import LenisWrapper from "./components/layout/lennisWrapper";
 import "./globals.css";
 import Navbar from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
             <header><Navbar/></header>
           {children}
           </LenisWrapper>
+          <footer><Footer/></footer>
         </body>
         
       </html>

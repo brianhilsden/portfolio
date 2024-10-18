@@ -1,13 +1,99 @@
-// pages/index.js
 "use client";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import EncButton from "./components/common/EncryptButton";
 
 export default function Home() {
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    // Check if the device can handle the 3D scene (avoid heavy rendering on mobile)
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) return;
+
+    // Lazy-load the scene setup
+    let renderer, scene, camera, particles;
+
+    const initScene = () => {
+      // Scene setup
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.z = 5;
+
+      renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      backgroundRef.current.appendChild(renderer.domElement);
+
+      // Particles setup with reduced particle count
+      const particlesGeometry = new THREE.BufferGeometry();
+      const particlesCount = 2000; 
+      const posArray = new Float32Array(particlesCount * 3);
+
+      for (let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 10;
+      }
+
+      particlesGeometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(posArray, 3)
+      );
+
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.02,
+        color: 0x888888,
+      });
+
+      particles = new THREE.Points(particlesGeometry, particlesMaterial);
+      scene.add(particles);
+
+      // Animation loop
+      const animate = () => {
+        requestAnimationFrame(animate);
+        particles.rotation.y += 0.001;
+        renderer.render(scene, camera);
+      };
+      animate();
+    };
+
+    initScene();
+
+    // Throttling resize handling
+    const handleResize = () => {
+      if (renderer && camera) {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      }
+    };
+    let resizeTimeout;
+    const throttledResize = () => {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(handleResize, 150);
+    };
+    window.addEventListener("resize", throttledResize);
+
+    // Clean up on unmount
+    return () => {
+      window.removeEventListener("resize", throttledResize);
+      if (backgroundRef.current && renderer) {
+        backgroundRef.current.removeChild(renderer.domElement);
+      }
+    };
+  }, []);
+
   return (
-    <section className="min-h-screen bg-gray-900 text-white flex items-center py-20">
-      <div className="container mx-auto px-8">
+    <section className="relative min-h-screen bg-gray-900 text-white flex items-center py-20">
+      {/* 3D Background */}
+      <div ref={backgroundRef} className="absolute inset-0 z-0" />
+
+      <div className="container mx-auto px-8 z-10">
         {/* Hero Section */}
         <div className="flex flex-col items-center text-center">
           <motion.h1
@@ -37,8 +123,31 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link href="/projects">
-              <EncButton text={"View All Projects"} />
+            <Link href="/projects" className="flex items-center gap-2">
+              <motion.div
+                className="mt-2 sm:flex justify-center hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                {" "}
+                {/* Link to the relevant section */}
+                <svg
+                  className="w-8 h-8 text-indigo-500 animate-bounce"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12h12m0 0l-4 4m4-4l-4-4" // This line points right
+                  />
+                </svg>
+              </motion.div>{" "}
+              <EncButton text={"View Projects"} />
             </Link>
             <Link
               href="/about"
@@ -49,100 +158,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Scrolling Arrow Down */}
-        <motion.div
-          className="mt-20 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <a href="#featured-projects">
-            <svg
-              className="w-8 h-8 text-indigo-500 animate-bounce"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-        </motion.div>
-
-        {/* Featured Projects Section */}
-        <motion.div
-          id="featured-projects"
-          className="mt-32"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Featured Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Project Card Example */}
-            <motion.div
-              className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
-              whileHover={{ scale: 1.05 }}
-            >
-              <h3 className="text-xl font-semibold mb-4">
-                TechVoyage: Company Website Project
-              </h3>
-              <p className="text-gray-300">
-                TechVoyage specializes in delivering innovative web solutions
-                and ensuring seamless user experiences.
-              </p>
-              <Link
-                href="https://techvoyage-kenya.github.io/TechVoyage-website/#/"
-                target="_blank"
-                className="text-indigo-500 mt-4 inline-block"
-              >
-                Visit site →
-              </Link>
-            </motion.div>
-
-            <motion.div
-              className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
-              whileHover={{ scale: 1.05 }}
-            >
-              <h3 className="text-xl font-semibold mb-4">MyDuka</h3>
-              <p className="text-gray-300">
-                MyDuka is a robust retail store management app that allows
-                business owners to manage multiple stores effortlessly.
-              </p>
-              <Link
-                href="https://brianhilsden.github.io/MyDuka-FrontEnd/#/"
-                target="_blank"
-                className="text-indigo-500 mt-4 inline-block"
-              >
-                Visit site →
-              </Link>
-            </motion.div>
-
-            <motion.div
-              className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
-              whileHover={{ scale: 1.05 }}
-            >
-              <h3 className="text-xl font-semibold mb-4">MunchInKenya</h3>
-              <p className="text-gray-300">
-              MunchInKenya is a dynamic single-page food delivery application designed to connect users with a diverse range of Kenyan restaurants and culinary offerings.
-              </p>
-              <Link
-                href="https://brianhilsden.github.io/MunchInKenya-fe/"
-                target="_blank"
-                className="text-indigo-500 mt-4 inline-block"
-              >
-                Visit site →
-              </Link>
-            </motion.div>
-          </div>
-        </motion.div>
+        {/* Scrolling Arrow Right */}
       </div>
     </section>
   );

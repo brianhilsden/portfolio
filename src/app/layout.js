@@ -28,6 +28,9 @@ export default function RootLayout({ children }) {
   return (
     <StoreProvider>
       <html lang="en">
+        <head>
+          <link rel="icon" href="https://www.clipartmax.com/png/middle/169-1695923_coder-png-transparent-image-software-developer-icon.png"/>
+        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >

@@ -2,6 +2,7 @@
 "use client"
 import Link from "next/link";
 import { motion } from "framer-motion";
+import EncButton from "./components/common/EncryptButton";
 
 export default function Home() {
   return (
@@ -35,9 +36,9 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link href="/projects" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-semibold transition">
-            
-                View Projects
+            <Link href="/projects">
+              <EncButton text={"View Projects"}/>
+              
             
             </Link>
             <Link href="/about" className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold transition">
@@ -88,12 +89,12 @@ export default function Home() {
               className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-xl font-semibold mb-4">Project One</h3>
+              <h3 className="text-xl font-semibold mb-4">MyDuka</h3>
               <p className="text-gray-300">
-                A brief description of your amazing project. Click to learn more!
+              MyDuka is a robust retail store management app that allows business owners to manage multiple stores effortlessly.
               </p>
-              <Link href="/projects/project-one" className="text-indigo-500 mt-4 inline-block">
-                Learn More →
+              <Link href="https://brianhilsden.github.io/MyDuka-FrontEnd/#/" className="text-indigo-500 mt-4 inline-block">
+                View project →
               </Link>
             </motion.div>
 
@@ -101,12 +102,12 @@ export default function Home() {
               className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-xl font-semibold mb-4">Project Two</h3>
+              <h3 className="text-xl font-semibold mb-4">Royalty Trading</h3>
               <p className="text-gray-300">
-                A brief description of your amazing project. Click to learn more!
+              Royalty Trading is a dynamic e-commerce platform built with vanilla JavaScript, designed to provide seamless buying and selling experiences.
               </p>
-              <Link href="/projects/project-two" className="text-indigo-500 mt-4 inline-block">
-                Learn More →
+              <Link href="https://brianhilsden.github.io/Royalty-trading/" className="text-indigo-500 mt-4 inline-block">
+                View Project →
               </Link>
             </motion.div>
 
@@ -114,12 +115,12 @@ export default function Home() {
               className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-xl font-semibold mb-4">Project Three</h3>
+              <h3 className="text-xl font-semibold mb-4">MunchInKenya</h3>
               <p className="text-gray-300">
-                A brief description of your amazing project. Click to learn more!
+              Welcome to MunchInKenya, your go-to solution for ordering delicious meals from local restaurants.
               </p>
-              <Link href="/projects/project-three" className="text-indigo-500 mt-4 inline-block">
-                 Learn More →
+              <Link href="https://brianhilsden.github.io/MunchInKenya-fe/" className="text-indigo-500 mt-4 inline-block">
+                 View project →
               </Link>
             </motion.div>
           </div>

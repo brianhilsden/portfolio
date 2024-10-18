@@ -1,14 +1,34 @@
 // pages/about.js
-"use client"
+"use client";
 import { motion } from "framer-motion";
-import { SiJavascript, SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiPython, SiDjango, SiFlask } from "react-icons/si";
+import {
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiPython,
+  SiDjango,
+  SiFlask,
+} from "react-icons/si";
+
+
 
 const skills = [
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 text-3xl" /> },
+  {
+    name: "JavaScript",
+    icon: <SiJavascript className="text-yellow-400 text-3xl" />,
+  },
   { name: "React", icon: <SiReact className="text-blue-500 text-3xl" /> },
   { name: "Next.js", icon: <SiNextdotjs className="text-gray-200 text-3xl" /> },
-  { name: "Node.js", icon: <SiNodedotjs className="text-green-500 text-3xl" /> },
-  { name: "Express.js", icon: <SiExpress className="text-gray-300 text-3xl" /> },
+  {
+    name: "Node.js",
+    icon: <SiNodedotjs className="text-green-500 text-3xl" />,
+  },
+  {
+    name: "Express.js",
+    icon: <SiExpress className="text-gray-300 text-3xl" />,
+  },
   { name: "Python", icon: <SiPython className="text-blue-400 text-3xl" /> },
   { name: "Django", icon: <SiDjango className="text-green-400 text-3xl" /> },
   { name: "Flask", icon: <SiFlask className="text-gray-500 text-3xl" /> },
@@ -37,25 +57,29 @@ export default function About() {
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <p className="text-lg leading-relaxed">
-              Hi there! I’m a passionate web developer with a love for creating
-              intuitive and dynamic user experiences. I specialize in building
-              responsive, high-quality websites and applications using modern
-              web technologies like React, Next.js, and Tailwind CSS. My goal is
-              to blend design and code to build applications that are not only
-              functional but also beautiful.
+              Hi there! I’m a passionate full-stack developer with a love for
+              creating intuitive and dynamic user experiences, as well as robust
+              and scalable backend systems. I specialize in building responsive,
+              high-quality websites and applications using modern technologies
+              like React, Next.js, and Tailwind CSS on the frontend, alongside
+              Node.js, Express, and Python frameworks like Django and Flask on
+              the backend. My goal is to blend design and code to build
+              applications that are not only functional but also efficient,
+              secure, and scalable.
             </p>
             <p className="text-lg leading-relaxed mt-4">
-              When I’m not coding, you can find me exploring new coffee shops,
-              hiking, or reading up on the latest in tech. I’m constantly
-              learning and eager to take on new challenges. Let’s build
-              something amazing together!
+              When I’m not coding, you can find me hitting the bowling alley,
+              exploring new places through traveling, or diving into articles
+              about emerging technologies. I love discovering how new trends can
+              impact the world and inspire my work. Let’s build something
+              amazing together!
             </p>
           </div>
 
           {/* Profile Image */}
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <motion.img
-              src="/images/profile-pic.png"
+              src="/images/profile.jpg"
               alt="Profile Picture"
               className="w-48 h-48 rounded-full object-cover shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -72,9 +96,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-semibold text-center mb-8">
-            My Skills
-          </h2>
+          <h2 className="text-3xl font-semibold text-center mb-8">My Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <motion.div

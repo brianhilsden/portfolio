@@ -1,54 +1,24 @@
-import Projects from "./projectsClient";
+import React from 'react'
+import Projects from './projectsClient';
 
 
 export const metadata = {
-    title: "Projects | My Portfolio",
-    description:
-      "Check out my projects built with modern web technologies including Next.js, React, and Tailwind CSS. Explore various applications, websites, and experiments that showcase my skills and creativity.",
-    keywords: [
-      "projects",
-      "portfolio",
-      "web development",
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Framer Motion",
-      "JavaScript",
-      "Frontend",
-    ],
-    openGraph: {
-      title: "Projects | My Portfolio",
-      description:
-        "Explore my projects showcasing my skills in web development and design. Built using Next.js, React, and Tailwind CSS.",
-      url: "https://yourdomain.com/projects",
-      type: "website",
-      images: [
-        {
-          url: "https://yourdomain.com/images/portfolio-cover.png",
-          width: 1200,
-          height: 630,
-          alt: "Portfolio Projects Cover",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      site: "@yourTwitterHandle",
-      title: "Projects | My Portfolio",
-      description:
-        "A collection of projects I've worked on, built with cutting-edge web technologies like Next.js, React, and Tailwind CSS.",
-      image: "https://yourdomain.com/images/portfolio-cover.png",
-    },
-  };
-  
+  title: "Brian Omondi - Projects",
+  description: "Explore my portfolio of projects, showcasing my skills in full-stack development",
+  keywords: "projects, portfolio, full-stack development, web applications, React, Flask, Django, Next.js, Express.js, PostgreSQL",
+  author: "Brian Omondi",
+  url: "https://yourwebsite.com/projects",
+ 
+};
 
-function ProjectsPage(){
-    return(
-        <div>
-            <Projects/>
-        </div>
-    )
 
+const page = () => {
+  return (
+    <div>
+      <Projects/>
+      
+    </div>
+  )
 }
 
-export default ProjectsPage
+export default page

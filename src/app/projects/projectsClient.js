@@ -18,19 +18,20 @@ const projects = [
     link: "https://retail-app-kappa.vercel.app/",
   },
   {
+    title: "MunchInKenya",
+    description:
+      "Welcome to MunchInKenya, your solution for ordering delicious meals from local restaurants. Our elegant single-page application offers a seamless food ordering experience, enabling users to browse menus, customize orders, and track deliveries in real time. With secure online payments, MunchInKenya simplifies enjoying your favorite meals.",
+    imageUrl: "/images/MunchInKenya.png",
+    link: "https://brianhilsden.github.io/MunchInKenya-fe/",
+  },
+  {
     title: "MyDuka",
     description:
       "MyDuka is a robust retail management app that empowers business owners to oversee multiple stores effortlessly. With dedicated admins for each store, clerks handle daily tasks, managing products, recording sales, and requesting inventory. The in-app chat feature enables team communication, ensuring operational efficiency and streamlined performance monitoring.",
     imageUrl: "/images/MyDuka.png",
     link: "https://brianhilsden.github.io/MyDuka-FrontEnd/#/",
   },
-  {
-    title: "Getway Travels",
-    description:
-      "Getway Travels is an online platform for booking travel packages, designed to enhance the user experience for travelers. The application offers features like searching for destinations, customizing travel plans, and managing bookings. With a user-friendly interface and secure payment options, Getway Travels simplifies planning your next adventure, ensuring a seamless travel experience.",
-    imageUrl: "/images/GetwayTravels.png", 
-    link: "https://brianhilsden.github.io/getway-travels", 
-  },
+ 
   {
     title: "Royalty Trading",
     description:
@@ -39,12 +40,13 @@ const projects = [
     link: "https://brianhilsden.github.io/Royalty-trading/",
   },
   {
-    title: "MunchInKenya",
+    title: "Getway Travels",
     description:
-      "Welcome to MunchInKenya, your solution for ordering delicious meals from local restaurants. Our elegant single-page application offers a seamless food ordering experience, enabling users to browse menus, customize orders, and track deliveries in real time. With secure online payments, MunchInKenya simplifies enjoying your favorite meals.",
-    imageUrl: "/images/MunchInKenya.png",
-    link: "https://brianhilsden.github.io/MunchInKenya-fe/",
+      "Getway Travels is an online platform for booking travel packages, designed to enhance the user experience for travelers. The application offers features like searching for destinations, customizing travel plans, and managing bookings. With a user-friendly interface and secure payment options, Getway Travels simplifies planning your next adventure, ensuring a seamless travel experience.",
+    imageUrl: "/images/GetwayTravels.png", 
+    link: "https://brianhilsden.github.io/getway-travels", 
   },
+
 ];
 
 export default function Projects() {

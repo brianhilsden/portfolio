@@ -1,101 +1,130 @@
-import Image from "next/image";
+// pages/index.js
+"use client"
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <section className="min-h-screen bg-gray-900 text-white flex items-center py-20">
+      <div className="container mx-auto px-8">
+        {/* Hero Section */}
+        <div className="flex flex-col items-center text-center">
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Hi, I&apos;m <span className="text-indigo-500">Brian Omondi</span>
+          </motion.h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.p
+            className="text-lg md:text-2xl leading-relaxed mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            A passionate web developer who creates beautiful and functional web
+            experiences. Let us build something amazing together.
+          </motion.p>
+
+          {/* Call to Action Buttons */}
+          <motion.div
+            className="flex space-x-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Read our docs
-          </a>
+            <Link href="/projects" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-semibold transition">
+            
+                View Projects
+            
+            </Link>
+            <Link href="/about" className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold transition">
+         
+                About Me
+           
+            </Link>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Scrolling Arrow Down */}
+        <motion.div
+          className="mt-20 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <a href="#featured-projects">
+            <svg
+              className="w-8 h-8 text-indigo-500 animate-bounce"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+        </motion.div>
+
+        {/* Featured Projects Section */}
+        <motion.div
+          id="featured-projects"
+          className="mt-32"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Project Card Example */}
+            <motion.div
+              className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
+              whileHover={{ scale: 1.05 }}
+            >
+              <h3 className="text-xl font-semibold mb-4">Project One</h3>
+              <p className="text-gray-300">
+                A brief description of your amazing project. Click to learn more!
+              </p>
+              <Link href="/projects/project-one" className="text-indigo-500 mt-4 inline-block">
+                Learn More →
+              </Link>
+            </motion.div>
+
+            <motion.div
+              className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
+              whileHover={{ scale: 1.05 }}
+            >
+              <h3 className="text-xl font-semibold mb-4">Project Two</h3>
+              <p className="text-gray-300">
+                A brief description of your amazing project. Click to learn more!
+              </p>
+              <Link href="/projects/project-two" className="text-indigo-500 mt-4 inline-block">
+                Learn More →
+              </Link>
+            </motion.div>
+
+            <motion.div
+              className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition"
+              whileHover={{ scale: 1.05 }}
+            >
+              <h3 className="text-xl font-semibold mb-4">Project Three</h3>
+              <p className="text-gray-300">
+                A brief description of your amazing project. Click to learn more!
+              </p>
+              <Link href="/projects/project-three" className="text-indigo-500 mt-4 inline-block">
+                 Learn More →
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }

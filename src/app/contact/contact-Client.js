@@ -3,12 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiMail, FiUser, FiMessageSquare } from "react-icons/fi";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-
-
-
-
-
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -18,22 +13,42 @@ export default function Contact() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    setIsSubmitted(true);
-  };
+    
+    
+    const response = await fetch('https://formspree.io/f/xanyyzkp', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-  
+    if (response.ok) {
+      setIsSubmitted(true);
+      setError("");
+      // Clear the form data if needed
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      const errorData = await response.json();
+      setError(errorData.errors[0].message || "Something went wrong");
+    }
+  };
 
   return (
     <section className="min-h-screen bg-gray-900 text-white py-20 relative overflow-hidden">
-     
       <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-500 rounded-full filter blur-xl opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-64 h-64 bg-indigo-500 rounded-full filter blur-2xl opacity-20 animate-pulse"></div>
 
@@ -64,6 +79,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            {error && <div className="text-red-500 mb-4">{error}</div>}
             <div className="mb-6 relative">
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Name

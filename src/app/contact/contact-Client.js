@@ -57,7 +57,7 @@ export default function Contact() {
           className="text-4xl md:text-6xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
           Get In Touch
         </motion.h1>
@@ -67,7 +67,7 @@ export default function Contact() {
             className="text-center text-2xl mt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
             Thank you for your message! I will get back to you soon.
           </motion.div>
@@ -77,7 +77,7 @@ export default function Contact() {
             className="max-w-lg mx-auto bg-gray-800 rounded-lg shadow-lg p-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
             {error && <div className="text-red-500 mb-4">{error}</div>}
             <div className="mb-6 relative">

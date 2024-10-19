@@ -43,7 +43,7 @@ export default function About() {
           className="text-4xl md:text-6xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
           About Me
         </motion.h1>
@@ -53,7 +53,7 @@ export default function About() {
           className="md:flex md:space-x-12"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <p className="text-lg leading-relaxed">
@@ -84,7 +84,7 @@ export default function About() {
               className="w-48 h-48 rounded-full object-cover shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
             />
           </div>
         </motion.div>
@@ -94,7 +94,7 @@ export default function About() {
           className="mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl font-semibold text-center mb-8">My Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

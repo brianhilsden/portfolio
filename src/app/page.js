@@ -100,7 +100,7 @@ export default function Home() {
             className="text-5xl md:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
             Hi, I&apos;m <span className="text-indigo-500">Brian Omondi</span>
           </motion.h1>
@@ -109,7 +109,7 @@ export default function Home() {
             className="text-lg md:text-2xl leading-relaxed mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             I am a dedicated full-stack web developer, passionate about crafting
             elegant and functional web applications. Let’s collaborate to create
@@ -121,14 +121,14 @@ export default function Home() {
             className="flex space-x-4 items-center justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Link href="/projects" className="flex items-center gap-2">
               <motion.div
                 className="mt-2 sm:flex justify-center hidden"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
               >
                 {" "}
                 {/* Link to the relevant section */}

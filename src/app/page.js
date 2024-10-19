@@ -90,7 +90,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gray-900 text-white flex items-center py-20">
+    <section className="relative min-h-screen bg-gray-900 text-white flex items-center py-16 md:py-0">
       {/* 3D Background */}
       <div ref={backgroundRef} className="absolute inset-0 z-0" />
 

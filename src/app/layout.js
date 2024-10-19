@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
         >
           <LenisWrapper>
             <header><Navbar/></header>
-            <div className="pt-2">          {children}</div>
+            <div className="">          {children}</div>
 
           </LenisWrapper>
           <footer><Footer/></footer>

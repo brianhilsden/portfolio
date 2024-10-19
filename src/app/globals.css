@@ -29,5 +29,5 @@ html, body {
 }
 
 .animate-custom-pulse {
-  animation: custom-pulse 4s infinite; /* Adjust the duration as needed */
+  animation: custom-pulse 4.5s infinite; /* Adjust the duration as needed */
 }

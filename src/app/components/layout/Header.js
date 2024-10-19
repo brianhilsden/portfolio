@@ -73,28 +73,37 @@ export default function Navbar() {
         </div>
         <SlideTabs />
         {isOpen && (
-          <nav className="absolute top-16 left-0 w-full bg-gray-800 md:hidden shadow-lg">
-            <motion.ul
-              className="flex flex-col p-4 space-y-2"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
+  <>
+    {/* Overlay to darken the background */}
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 z-40" 
+      onClick={() => setIsOpen(false)} // Close the menu when clicking outside
+    ></div>
+    
+    <nav className="absolute top-16 left-0 w-full bg-gray-900 md:hidden shadow-lg z-50">
+      <motion.ul
+        className="flex flex-col p-4 space-y-2"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {navItems.map((item, index) => (
+          <motion.li key={index} variants={itemVariants}>
+            <Link
+              href={item.href}
+              className="flex items-center text-gray-300 hover:text-white transition p-2 rounded-lg"
+              onClick={() => setIsOpen(false)}
             >
-              {navItems.map((item, index) => (
-                <motion.li key={index} variants={itemVariants}>
-                  <Link
-                    href={item.href}
-                    className="flex items-center text-gray-300 hover:text-white transition p-2 rounded-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="mr-3 text-3xl">{item.icon}</span>
-                    {item.label}
-                  </Link>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </nav>
-        )}
+              <span className="mr-3 text-3xl text-gray-300">{item.icon}</span>
+              {item.label}
+            </Link>
+          </motion.li>
+        ))}
+      </motion.ul>
+    </nav>
+  </>
+)}
+
       </div>
     </header>
   );

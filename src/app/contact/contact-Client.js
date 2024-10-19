@@ -49,8 +49,8 @@ export default function Contact() {
 
   return (
     <section className="min-h-screen bg-gray-900 text-white py-20 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-500 rounded-full filter blur-xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-64 h-64 bg-indigo-500 rounded-full filter blur-2xl opacity-20 animate-pulse"></div>
+      <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-500 rounded-full filter blur-xl opacity-20 sm:animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-64 h-64 bg-indigo-500 rounded-full filter blur-2xl opacity-20 sm:animate-pulse"></div>
 
       <div className="container mx-auto px-2 sm:px-8 relative z-10">
         <motion.h1

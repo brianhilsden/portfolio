@@ -97,7 +97,7 @@ export default function Home() {
       <div className="container mx-auto px-8 z-10">
         {/* Hero Section */}
         <div className="flex flex-col items-center text-center">
-          <div className="md:hidden relative flex items-center justify-center">
+        <div className="md:hidden relative flex items-center justify-center animate-custom-pulse">
            
            
 

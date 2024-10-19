@@ -1,29 +1,46 @@
-"use client"
-import { useState } from "react";
-import Link from "next/link";
+"use client";
+
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FaHome, FaUser, FaFolder, FaEnvelope } from "react-icons/fa";
+import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/", icon: <FaHome /> },
+  { label: "About", href: "/about", icon: <FaUser /> },
+  { label: "Projects", href: "/projects", icon: <FaFolder /> },
+  { label: "Contact", href: "/contact", icon: <FaEnvelope /> },
 ];
 
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const containerVariants = {
+    hidden: { opacity: 0, height: 0 },
+    visible: {
+      opacity: 1,
+      height: "auto",
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -10, scale: 0.8 },
+    visible: { opacity: 1, x: 0, scale: 1 },
+  };
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gray-900 shadow-lg">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-white hover:text-gray-300">
-     
-            My Portfolio
-         
+      <div className="container mx-auto px-6 py-2 flex justify-between items-center">
+        <Link
+          href="/"
+          className="text-2xl font-bold text-white hover:text-gray-300"
+        >
+          <Image src="/images/officialLogo.png" alt="logo" width={70} height={70}/>
         </Link>
-
-        {/* Hamburger Icon for Mobile */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -54,41 +71,102 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-
-        {/* Desktop Navbar */}
-        <nav className="hidden md:flex space-x-6">
-          {navItems.map((item, index) => (
-            <Link key={index} href={item.href} className="text-gray-300 hover:text-white transition">
-        
-                {item.label}
-          
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Menu */}
+        <SlideTabs />
         {isOpen && (
-          <motion.nav
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            className="absolute top-16 left-0 w-full bg-gray-800 md:hidden"
-          >
-            <ul className="flex flex-col p-4 space-y-2">
+          <nav className="absolute top-16 left-0 w-full bg-gray-800 md:hidden shadow-lg">
+            <motion.ul
+              className="flex flex-col p-4 space-y-2"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               {navItems.map((item, index) => (
-                <li key={index}>
-                  <Link href={item.href} className="block text-gray-300 hover:text-white transition" onClick={() => setIsOpen(false)}>
-                
-                      {item.label}
-                 
+                <motion.li key={index} variants={itemVariants}>
+                  <Link
+                    href={item.href}
+                    className="flex items-center text-gray-300 hover:text-white transition p-2 rounded-lg"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span className="mr-3 text-3xl">{item.icon}</span>
+                    {item.label}
                   </Link>
-                </li>
+                </motion.li>
               ))}
-            </ul>
-          </motion.nav>
+            </motion.ul>
+          </nav>
         )}
       </div>
     </header>
   );
+}
+
+const SlideTabs = () => {
+  const [position, setPosition] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
+
+  return (
+    <ul
+      onMouseLeave={() => {
+        setPosition((pv) => ({
+          ...pv,
+          opacity: 0,
+        }));
+      }}
+      className="hidden md:flex relative w-fit rounded-full p-1"
+    >
+      <Tab setPosition={setPosition} link="/">
+        Home
+      </Tab>
+      <Tab setPosition={setPosition} link="/about">
+        About
+      </Tab>
+      <Tab setPosition={setPosition} link="/projects">
+        Projects
+      </Tab>
+      <Tab setPosition={setPosition} link="/contact">
+        Contact
+      </Tab>
+
+      <Cursor position={position} />
+    </ul>
+  );
 };
 
-export default Navbar;
+const Tab = ({ children, setPosition, link }) => {
+  const ref = useRef(null);
+
+  return (
+    <Link
+      ref={ref}
+      onMouseEnter={() => {
+        if (!ref?.current) return;
+
+        const { width } = ref.current.getBoundingClientRect();
+
+        setPosition({
+          left: ref.current.offsetLeft,
+          width,
+          opacity: 1,
+        });
+      }}
+      href={link}
+      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+    >
+      {children}
+    </Link>
+  );
+};
+
+const Cursor = ({ position }) => {
+  return (
+    <motion.li
+      animate={{
+        ...position,
+      }}
+      className="absolute z-0 h-7 rounded-full bg-gray-100 md:h-12"
+    />
+  );
+};

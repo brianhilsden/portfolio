@@ -33,7 +33,7 @@ export default function Home() {
 
       // Particles setup with reduced particle count
       const particlesGeometry = new THREE.BufferGeometry();
-      const particlesCount = 2000; 
+      const particlesCount = 2000;
       const posArray = new Float32Array(particlesCount * 3);
 
       for (let i = 0; i < particlesCount * 3; i++) {
@@ -151,9 +151,16 @@ export default function Home() {
             </Link>
             <Link
               href="/about"
-              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold transition"
+             
             >
-              About Me
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                 className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold"
+                transition={{ type: "spring", stiffness: "100" }}
+              >
+                About Me
+              </motion.button>
             </Link>
           </motion.div>
         </div>

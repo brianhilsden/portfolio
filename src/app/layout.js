@@ -30,14 +30,15 @@ export default function RootLayout({ children }) {
     <StoreProvider>
       <html lang="en">
         <head>
-          <link rel="icon" href="https://www.clipartmax.com/png/middle/169-1695923_coder-png-transparent-image-software-developer-icon.png"/>
+          <link rel="icon" href="/images/officialLogo.png"/>
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <LenisWrapper>
             <header><Navbar/></header>
-          {children}
+            <div className="pt-2">          {children}</div>
+
           </LenisWrapper>
           <footer><Footer/></footer>
         </body>

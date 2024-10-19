@@ -101,9 +101,10 @@ export default function About() {
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-800 py-4 rounded-lg text-center shadow-md hover:bg-gray-700 transition flex flex-col items-center"
+                className="bg-gray-800 py-4 rounded-lg text-center shadow-md hover:bg-gray-700 flex flex-col items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                transition={{type:"spring", stiffness:"100"}}
               >
                 {skill.icon}
                 <span className="mt-2">{skill.name}</span>

@@ -63,6 +63,7 @@ const EncryptButton = ({textProp}) => {
       }}
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
+      transition={{type:"spring", stiffness:"100"}}
       className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors hover:text-indigo-300"
     >
       <div className="relative z-10 flex items-center gap-2">

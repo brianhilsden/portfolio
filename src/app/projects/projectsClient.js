@@ -13,7 +13,7 @@ const projects = [
   {
     title: "TechVoyage: Food Retail Management Dashboard Project",
     description:
-      "Introducing the Retail Management Dashboard from TechVoyage, a comprehensive web application designed for Admins, Salespeople, Riders, and Business Owners. Featuring both admin and client sides, this powerful tool allows users to manage orders, oversee transactions, and optimize inventory and deliveries, enhancing productivity and ensuring smooth operations.",
+      "The Retail Management App from TechVoyage is a comprehensive web application designed for Admins, Salespeople, Riders, and Business Owners. Featuring both admin and client sides, this powerful tool allows users to manage orders, oversee transactions, and optimize inventory and deliveries, ensuring smooth operations.",
     imageUrl: "/images/RetailApp.png",
     link: "https://retail-app-kappa.vercel.app/",
   },

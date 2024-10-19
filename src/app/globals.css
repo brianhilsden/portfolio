@@ -20,7 +20,7 @@ html, body {
   }
   50% {
     
-    opacity: 0.7;
+    opacity: 0.6;
   }
   100% {
  
@@ -29,5 +29,5 @@ html, body {
 }
 
 .animate-custom-pulse {
-  animation: custom-pulse 3.5s infinite; /* Adjust the duration as needed */
+  animation: custom-pulse 4s infinite; /* Adjust the duration as needed */
 }

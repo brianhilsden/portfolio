@@ -96,15 +96,15 @@ export default function Home() {
 
       <div className="container mx-auto px-8 z-10">
         {/* Hero Section */}
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col text-center">
         <div className="md:hidden relative flex items-center justify-center animate-custom-pulse">
            
            
 
             <Image
               src="/images/hero_setup.png"
-              width={300}
-              height={300}
+              width={250}
+              height={250}
               alt="hero_image"
               className="relative z-10  rounded-full" 
             
@@ -126,8 +126,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            I am a dedicated full-stack web developer, passionate about crafting
-            elegant and functional web applications. Let’s collaborate to create
+            I am a dedicated full-stack developer, passionate about crafting
+            elegant and functional applications. Let’s collaborate to create
             something extraordinary together.
           </motion.p>
 

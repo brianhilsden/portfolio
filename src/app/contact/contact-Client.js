@@ -52,7 +52,7 @@ export default function Contact() {
       <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-500 rounded-full filter blur-xl opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-64 h-64 bg-indigo-500 rounded-full filter blur-2xl opacity-20 animate-pulse"></div>
 
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="container mx-auto px-2 sm:px-8 relative z-10">
         <motion.h1
           className="text-4xl md:text-6xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: -20 }}

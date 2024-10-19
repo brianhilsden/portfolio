@@ -4,6 +4,7 @@ import * as THREE from "three";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import EncButton from "./components/common/EncryptButton";
+import Image from "next/image";
 
 export default function Home() {
   const backgroundRef = useRef(null);
@@ -96,6 +97,20 @@ export default function Home() {
       <div className="container mx-auto px-8 z-10">
         {/* Hero Section */}
         <div className="flex flex-col items-center text-center">
+          <div className="md:hidden relative flex items-center justify-center">
+           
+           
+
+            <Image
+              src="/images/hero_setup.png"
+              width={300}
+              height={300}
+              alt="hero_image"
+              className="relative z-10  rounded-full" 
+            
+            />
+          </div>
+
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: -20 }}
@@ -130,8 +145,6 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                {" "}
-                {/* Link to the relevant section */}
                 <svg
                   className="w-8 h-8 text-indigo-500 animate-bounce"
                   fill="none"
@@ -146,17 +159,14 @@ export default function Home() {
                     d="M9 12h12m0 0l-4 4m4-4l-4-4" // This line points right
                   />
                 </svg>
-              </motion.div>{" "}
+              </motion.div>
               <EncButton text={"View Projects"} />
             </Link>
-            <Link
-              href="/about"
-             
-            >
+            <Link href="/about">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                 className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold"
+                className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-semibold"
                 transition={{ type: "spring", stiffness: "100" }}
               >
                 About Me

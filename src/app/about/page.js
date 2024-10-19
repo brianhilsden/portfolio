@@ -15,7 +15,7 @@ const page = () => {
 
   
   return (
-    <div>
+    <div className='pt-2'>
       <About/>
       
     </div>

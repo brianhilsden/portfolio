@@ -12,8 +12,6 @@ import {
   SiFlask,
 } from "react-icons/si";
 
-
-
 const skills = [
   {
     name: "JavaScript",
@@ -36,7 +34,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section className="min-h-screen bg-gray-900 text-white py-20 pt-2">
+    <section className="min-h-screen bg-gray-900 text-white py-20 ">
       <div className="container mx-auto px-8">
         {/* Header */}
         <motion.h1
@@ -57,16 +55,17 @@ export default function About() {
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <p className="text-lg leading-relaxed">
-              Hi there! I’m a passionate full-stack developer with a love for
-              creating intuitive and dynamic user experiences, as well as robust
-              and scalable backend systems. I specialize in building responsive,
-              high-quality websites and applications using modern technologies
-              like React, Next.js, and Tailwind CSS on the frontend, alongside
-              Node.js, Express, and Python frameworks like Django and Flask on
-              the backend. My goal is to blend design and code to build
-              applications that are not only functional but also efficient,
-              secure, and scalable.
+              I’m a passionate full-stack developer with a love for
+              crafting intuitive user experiences and building robust, scalable
+              systems. I specialize in creating dynamic applications using
+              modern technologies, including React, Next.js, and Tailwind CSS on
+              the frontend, alongside Node.js, Express, and Python frameworks
+              such as Django and Flask on the backend. My goal is to blend
+              design and functionality to build applications that are efficient,
+              secure, and scalable, addressing diverse user needs across various
+              platforms.
             </p>
+
             <p className="text-lg leading-relaxed mt-4">
               When I’m not coding, you can find me hitting the bowling alley,
               exploring new places through traveling, or diving into articles
@@ -104,7 +103,7 @@ export default function About() {
                 className="bg-gray-800 py-4 rounded-lg text-center shadow-md hover:bg-gray-700 flex flex-col items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{type:"spring", stiffness:"100"}}
+                transition={{ type: "spring", stiffness: "100" }}
               >
                 {skill.icon}
                 <span className="mt-2">{skill.name}</span>

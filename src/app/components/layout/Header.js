@@ -80,7 +80,7 @@ export default function Navbar() {
       onClick={() => setIsOpen(false)} // Close the menu when clicking outside
     ></div>
     
-    <nav className="absolute top-16 left-0 w-full bg-gray-900 md:hidden shadow-lg z-50">
+    <nav className="absolute top-16 left-0 w-full bg-gray-950 md:hidden shadow-lg z-50">
       <motion.ul
         className="flex flex-col p-4 space-y-2"
         variants={containerVariants}

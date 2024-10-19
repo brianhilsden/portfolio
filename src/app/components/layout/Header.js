@@ -80,9 +80,9 @@ export default function Navbar() {
       onClick={() => setIsOpen(false)} // Close the menu when clicking outside
     ></div>
     
-    <nav className="absolute top-16 left-0 w-full bg-gray-950 md:hidden shadow-lg z-50">
+    <nav className="absolute top-16 left-0 w-full bg-gray-950 md:hidden shadow-lg z-50 rounded-lg">
       <motion.ul
-        className="flex flex-col p-4 space-y-2"
+        className="flex flex-col p-4 space-y-3"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -91,11 +91,11 @@ export default function Navbar() {
           <motion.li key={index} variants={itemVariants}>
             <Link
               href={item.href}
-              className="flex items-center text-gray-300 hover:text-white transition p-2 rounded-lg"
+              className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white transition p-3 rounded-lg duration-200 ease-in-out"
               onClick={() => setIsOpen(false)}
             >
-              <span className="mr-3 text-3xl text-gray-300">{item.icon}</span>
-              {item.label}
+              <span className="mr-4 text-2xl text-gray-300">{item.icon}</span>
+              <span className="font-semibold text-lg">{item.label}</span>
             </Link>
           </motion.li>
         ))}

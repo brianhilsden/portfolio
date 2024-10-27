@@ -47,11 +47,11 @@ const projects = [
     link: "https://brianhilsden.github.io/getway-travels", 
   },
   {
-    title: "Payment App",
+    title: "Learning Management System",
     description:
-      "A Django-based REST API transactions management application that connects buyers and sellers, enabling sellers to track transactions efficiently. It facilitates secure online transactions and integrates JWT for authentication, ensuring a safe and smooth payment process.",
-    imageUrl: "/images/paymentApp.png",
-    link: "https://payment-app-psi-seven.vercel.app/api/docs/swagger/", 
+      "This Django REST API is designed to power a robust Learning Management System, providing endpoints for managing courses, user registrations, enrollments, and role-based access control. Instructors, students, and administrators can seamlessly interact with the system, leveraging various access levels to perform actions like course creation, assignment submissions, grading, and progress tracking.",
+    imageUrl: "/images/LMS.png",
+    link: "https://learning-management-system-alpha-eosin.vercel.app/docs/", 
   },
 ];
 

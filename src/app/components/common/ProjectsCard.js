@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const ProjectCard = ({ title, description, imageUrl, link }) => {
+const ProjectCard = ({ title, description, imageUrl, link,tech_stack }) => {
  
     
   return (
@@ -23,6 +23,7 @@ const ProjectCard = ({ title, description, imageUrl, link }) => {
         <div className="p-6">
           <h3 className="text-2xl font-bold mb-2">{title}</h3>
           <p className="text-gray-400">{description}</p>
+          <p className="text-gray-300">Tech stack: {tech_stack}</p>
         </div>
       </motion.div>
     </a>

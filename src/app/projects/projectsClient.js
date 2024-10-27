@@ -63,8 +63,8 @@ const projects = [
   {
     title: "Payment App",
     description:
-      "A Django-based REST API transactions management application that connects buyers and sellers, enabling sellers to track transactions efficiently. It facilitates secure online transactions and integrates JWT for authentication, ensuring a safe and smooth payment process.",
-    imageUrl: "/images/paymentApp.png",
+    "The Payment App is a robust Django-based REST API designed for managing transactions between buyers and sellers. This application streamlines the payment process by connecting users in a secure environment, allowing sellers to efficiently track transactions, manage sales, and generate reports.",
+    imageUrl: "/images/paymentApp.png", 
     link: "https://payment-app-psi-seven.vercel.app/api/docs/swagger/",
     tech_stack: "Django, JWT, PostgreSQL"
   },

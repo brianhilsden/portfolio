@@ -10,6 +10,7 @@ import {
   SiPython,
   SiDjango,
   SiFlask,
+  SiFirebase,
 } from "react-icons/si";
 
 const skills = [
@@ -30,6 +31,7 @@ const skills = [
   { name: "Python", icon: <SiPython className="text-blue-400 text-3xl" /> },
   { name: "Django", icon: <SiDjango className="text-green-400 text-3xl" /> },
   { name: "Flask", icon: <SiFlask className="text-gray-500 text-3xl" /> },
+  { name: "Firebase", icon: <SiFirebase className="text-gray-500 text-3xl" /> },
 ];
 
 export default function About() {

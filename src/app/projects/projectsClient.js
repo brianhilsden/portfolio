@@ -10,6 +10,13 @@ const projects = [
     imageUrl: "/images/TechVoyageCompany.png",
     link: "https://techvoyage-kenya.github.io/TechVoyage-website/#/",
   },
+   {
+    title: "Learning Management System",
+    description:
+      "This Django REST API is designed to power a robust Learning Management System, providing endpoints for managing courses, user registrations, enrollments, and role-based access control. Instructors, students, and administrators can seamlessly interact with the system, leveraging various access levels to perform actions like course creation, assignment submissions, grading, and progress tracking.",
+    imageUrl: "/images/LMS.png",
+    link: "https://learning-management-system-alpha-eosin.vercel.app/docs/", 
+  },
   {
     title: "TechVoyage: Food Retail Management Dashboard Project",
     description:
@@ -46,13 +53,7 @@ const projects = [
     imageUrl: "/images/GetwayTravels.png", 
     link: "https://brianhilsden.github.io/getway-travels", 
   },
-  {
-    title: "Learning Management System",
-    description:
-      "This Django REST API is designed to power a robust Learning Management System, providing endpoints for managing courses, user registrations, enrollments, and role-based access control. Instructors, students, and administrators can seamlessly interact with the system, leveraging various access levels to perform actions like course creation, assignment submissions, grading, and progress tracking.",
-    imageUrl: "/images/LMS.png",
-    link: "https://learning-management-system-alpha-eosin.vercel.app/docs/", 
-  },
+ 
 ];
 
 export default function Projects() {

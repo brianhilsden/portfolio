@@ -66,7 +66,7 @@ const projects = [
     "The Payment App is a robust Django-based REST API designed for managing transactions between buyers and sellers. This application streamlines the payment process by connecting users in a secure environment, allowing sellers to efficiently track transactions, manage sales, and generate reports.",
     imageUrl: "/images/paymentApp.png", 
     link: "https://payment-app-psi-seven.vercel.app/api/docs/swagger/",
-    tech_stack: "Django REST Framework, JWT, PostgreSQL"
+    tech_stack: "Django REST Framework, PostgreSQL"
   },
 ];
 

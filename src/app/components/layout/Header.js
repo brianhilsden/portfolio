@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FaHome, FaUser, FaFolder, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaUser, FaFolder, FaEnvelope, FaCode } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,6 +11,8 @@ const navItems = [
   { label: "About", href: "/about", icon: <FaUser /> },
   { label: "Projects", href: "/projects", icon: <FaFolder /> },
   { label: "Contact", href: "/contact", icon: <FaEnvelope /> },
+  { label: "Playground", href: "/playground", icon: <FaCode /> },
+
 ];
 
 export default function Navbar() {
@@ -137,6 +139,9 @@ const SlideTabs = () => {
       </Tab>
       <Tab setPosition={setPosition} link="/contact">
         Contact
+      </Tab>
+      <Tab setPosition={setPosition} link="/playground">
+        Playground
       </Tab>
 
       <Cursor position={position} />

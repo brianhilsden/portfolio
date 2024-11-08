@@ -4,7 +4,6 @@ import * as THREE from "three";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import EncButton from "./components/common/EncryptButton";
-import Image from "next/image";
 import Lottie from "lottie-react";
 import animationData from '../../public/animations/animation.json';
 

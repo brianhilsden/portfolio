@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import EncButton from "./components/common/EncryptButton";
 import Image from "next/image";
+import Lottie from "lottie-react";
+import animationData from '../../public/animations/animation.json';
 
 export default function Home() {
   const backgroundRef = useRef(null);
@@ -101,14 +103,7 @@ export default function Home() {
            
            
 
-            <Image
-              src="/images/hero_setup.png"
-              width={250}
-              height={250}
-              alt="hero_image"
-              className="relative z-10  rounded-full" 
-            
-            />
+        <Lottie animationData={animationData} loop={true} autoplay={true} />
           </div>
 
           <motion.h1

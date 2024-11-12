@@ -28,46 +28,7 @@ const projects = [
     link: "https://retail-app-kappa.vercel.app/",
     tech_stack: "React.js, Spring Boot"
   },
-  {
-    title: "MunchInKenya",
-    description:
-      "Welcome to MunchInKenya, your solution for ordering delicious meals from local restaurants. Our elegant single-page application offers a seamless food ordering experience, enabling users to browse menus, customize orders, and track deliveries in real time. With secure online payments, MunchInKenya simplifies enjoying your favorite meals.",
-    imageUrl: "/images/MunchInKenya.png",
-    link: "https://brianhilsden.github.io/MunchInKenya-fe/",
-    tech_stack: "React.js, Flask, PostgreSQL"
-  },
-  {
-    title: "MyDuka",
-    description:
-      "MyDuka is a robust retail management app that empowers business owners to oversee multiple stores effortlessly. With dedicated admins for each store, clerks handle daily tasks, managing products, recording sales, and requesting inventory. The in-app chat feature enables team communication, ensuring operational efficiency and streamlined performance monitoring.",
-    imageUrl: "/images/MyDuka.png",
-    link: "https://brianhilsden.github.io/MyDuka-FrontEnd/#/",
-    tech_stack: "React.js, Flask, Firebase"
-  },
-  {
-    title: "Royalty Trading",
-    description:
-      "Royalty Trading is a dynamic e-commerce platform built with vanilla JavaScript, designed to offer seamless buying and selling experiences. Users can browse diverse products, manage accounts, and complete secure transactions. With a focus on user-friendly design, Royalty Trading makes online shopping accessible and efficient for all.",
-    imageUrl: "/images/RoyaltyTrading.png",
-    link: "https://brianhilsden.github.io/Royalty-trading/",
-    tech_stack: "HTML, CSS, Vanilla JavaScript, Firebase"
-  },
-  {
-    title: "Getway Travels",
-    description:
-      "Getway Travels is an online platform for booking travel packages, designed to enhance the user experience for travelers. The application offers features like searching for destinations, customizing travel plans, and managing bookings. With a user-friendly interface and secure payment options, Getway Travels simplifies planning your next adventure, ensuring a seamless travel experience.",
-    imageUrl: "/images/GetwayTravels.png",
-    link: "https://brianhilsden.github.io/getway-travels",
-    tech_stack: "React.js, Firebase"
-  },
-  {
-    title: "Payment App",
-    description:
-    "The Payment App is a robust Django-based REST API designed for managing transactions between buyers and sellers. This application streamlines the payment process by connecting users in a secure environment, allowing sellers to efficiently track transactions, manage sales, and generate reports.",
-    imageUrl: "/images/paymentApp.png", 
-    link: "https://payment-app-psi-seven.vercel.app/api/docs/swagger/",
-    tech_stack: "Django REST Framework, PostgreSQL"
-  },
+
 ];
 
 

@@ -8,7 +8,7 @@ const projects = [
     description:
       "TechVoyage specializes in delivering innovative web solutions. The company focuses on ensuring seamless user experiences. We utilize the latest technologies to meet your unique needs and take pride in crafting solutions that align with your vision and drive measurable results.",
     imageUrl: "/images/TechVoyageCompany.png",
-    link: "https://techvoyage.co.ke/#/",
+    link: "https://techvoyage.co.ke",
     tech_stack: "Next.js, Node.js, Express.js, PostgreSQL"
  
   },

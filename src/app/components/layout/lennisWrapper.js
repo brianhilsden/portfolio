@@ -9,7 +9,7 @@ export default function LenisWrapper({ children }) {
     <ReactLenis
       root
       options={{
-        lerp: 0.08,
+        lerp: 0.12,
         syncTouch: true,
       }}
     >

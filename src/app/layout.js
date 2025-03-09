@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <head>
           <link rel="icon" href="/images/officialLogo.png"/>
+          <meta name="trustpilot-one-time-domain-verification-id" content="c31d7d5c-069d-4b24-ae70-dd9ec94b3a2e"/>
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}

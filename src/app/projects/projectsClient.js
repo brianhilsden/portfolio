@@ -1,36 +1,34 @@
 "use client";
 import { motion } from "framer-motion";
 import ProjectCard from "../components/common/ProjectsCard";
-
 const projects = [
-  
-
+   {
+    title: "ExamHive: Nursing Exam Prep Platform",
+    description:
+      "An interactive exam preparation platform for ATI TEAS and HESI A2. Includes flashcards, question banks, study guides, and simulated practice tests with detailed rationales, personalized study paths, and performance tracking.",
+    imageUrl: "/images/examhive.png",
+    link: "https://theexamhive.com/", 
+    tech_stack: "Next.js, Tailwind CSS, Framer Motion, Express, PostgreSQL"
+  },
   {
     title: "KejaRMS: Rental Management System",
     description:
-      "KejaRMS is a comprehensive rental management system designed to streamline property management for landlords and tenants. It includes features like automated invoicing, tenant communication, property listings, and a tenant dashboard for managing requests and payments.",
+      "A full-stack rental management platform with modules for landlords, tenants, caretakers, and agents. Features include automated invoicing, property listings, tenant dashboards, rent collection (M-Pesa/bank), bulk notifications, and financial reporting.",
     imageUrl: "/images/keja.png",
     link: "https://info.keja-rms.co.ke/",
-    tech_stack: "React, TypeScript, SpringBoot, PostgreSQL, Firebase"
+    tech_stack: "React, TypeScript, Express, PostgreSQL, Docker"
   },
+ 
   {
-    title: "Food Retail Management",
+    title: "TechVoyage: Company Website",
     description:
-      "The Retail Management App is a comprehensive web application designed for Admins, Salespeople, Riders, and Business Owners. Featuring both admin and client sides, this powerful tool allows users to manage orders, oversee transactions, and optimize inventory and deliveries, ensuring smooth operations.",
-    imageUrl: "/images/RetailApp.png",
-    link: "https://retail-app-kappa.vercel.app/",
-    tech_stack: "React.js"
-  },
-
-  {
-    title: "Learning Management System",
-    description:
-      "This Django REST API is designed to power a robust Learning Management System, providing endpoints for managing courses, user registrations, enrollments, and role-based access control. Instructors, students, and administrators can seamlessly interact with the system, leveraging various access levels to perform actions like course creation, assignment submission, and grading.",
-    imageUrl: "/images/LMS.png",
-    link: "https://learning-management-system-alpha-eosin.vercel.app/docs/",
-    tech_stack: "Django REST Framework, PostgreSQL"
+      "Designed and developed the official website for TechVoyage, a digital solutions company. Showcases services in web development, data solutions, and digital transformation with a modern, responsive, and user-friendly design.",
+    imageUrl: "/images/TechVoyageCompany.png",
+    link: "https://tech-voyage-next-js.vercel.app/", 
+    tech_stack: "Next.js, Tailwind CSS, TypeScript"
   },
 ];
+
 
 
 export default function Projects() {
